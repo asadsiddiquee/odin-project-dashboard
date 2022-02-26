@@ -1,0 +1,63 @@
+.dashboard {
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+  padding: 0.5rem;
+  grid-area: dash;
+  img {
+    width: 1rem;
+  }
+  z-index: 1;
+  position: fixed;
+  background-color: #fff;
+  li {
+    padding-left: 2rem;
+  }
+}
+
+.dash {
+  display: none;
+}
+
+.ham {
+  display: block;
+  position: -webkit-sticky;
+  position: fixed;
+  right: 5px;
+  top: 5px;
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+  border-style: none;
+  font-size: 1.5rem;
+}
+
+// ------- media 760px
+// ------- media 760px
+@media (min-width: 576px) {
+  .dashboard {
+    position: relative;
+    box-shadow: none;
+    padding: 1rem;
+    img {
+      width: 1.5rem;
+    }
+    li {
+      margin: 1rem 0;
+    }
+    ul {
+      margin-bottom: 2rem;
+      border-top: 1px solid #000;
+      border-radius: 5px;
+    }
+    a {
+      margin: 0.5rem;
+    }
+  }
+  .ham {
+    display: none;
+  }
+  .dash {
+    display: block;
+  }
+}
+// ------- media 760px
+// ------- media 760px

@@ -1,0 +1,47 @@
+@import 'header';
+@import 'main';
+@import 'dashboard';
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@300&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto Serif', sans-serif;
+}
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+ul {
+  padding-left: 0;
+}
+
+@mixin grid($gtc, $gtr, $gta) {
+  display: grid;
+  grid-template-columns: $gtc;
+  grid-template-rows: $gtr;
+  grid-template-areas: $gta;
+}
+
+//
+.container {
+  @include grid(
+    minmax(min-content, max-content) minmax(min-content, max-content),
+    min-content min-content,
+    'dash head head' 'dash main main'
+  );
+  position: absolute;
+}

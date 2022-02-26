@@ -1,0 +1,94 @@
+@mixin grid($gtc, $gtr, $gta) {
+  display: grid;
+  grid-template-columns: $gtc;
+  grid-template-rows: $gtr;
+  grid-template-areas: $gta;
+}
+
+.main-content {
+  h2 {
+    margin: 2rem 0;
+  }
+  grid-area: main;
+
+  padding: 1rem 2rem;
+}
+
+.side-2 {
+  img {
+    height: 3rem;
+  }
+}
+
+.card-btn {
+  img {
+    width: 1.2rem;
+  }
+  border: 0.5px solid rgb(2, 221, 210);
+  background-color: rgba(1, 219, 248, 0.521);
+  border-radius: 3px;
+  padding: 0.2rem;
+}
+
+.project-card {
+  margin-bottom: 2rem;
+}
+.side-1 {
+  grid-area: side1;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 1rem;
+  margin: 1rem auto;
+}
+
+.project {
+  grid-area: project;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.side-2 {
+  grid-area: side2;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.trending-card {
+  display: flex;
+  justify-content: center;
+
+  padding: 1rem;
+}
+
+@media (min-width: 992px) {
+  .main-content {
+    @include grid(70% 25%, 50% 50%, 'project side1' 'project side2');
+  }
+  .project {
+    margin-right: 1rem;
+    display: grid;
+    @include grid(1fr 1fr, 6%, 'h2 h2');
+    grid-gap: 10px;
+    box-shadow: none;
+  }
+  .project h2 {
+    grid-area: h2;
+    margin-left: 2rem;
+  }
+
+  .project-card {
+    border-radius: 5px;
+    border-left: 5px solid orange;
+    height: max-content;
+    width: 70%;
+    margin: 1rem 1rem;
+    padding: 1rem 2rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+} ;
